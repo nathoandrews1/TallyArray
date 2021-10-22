@@ -11,15 +11,14 @@ import java.util.*;
  *
  * @author Nathan
  */
-public class Tally {
+public final class Tally {
     
-    //Constructor
-    public Tally(){
-        
+    private Tally(){
+        //Making a static class in java.
     }
     
     //Fill array with randoms
-    public void AddRandom(ArrayList<Integer> setList, int size) {
+    public static void AddRandom(ArrayList<Integer> setList, int size) {
         int random;
         for (int i = 0; i < size; i++) {
             random = (int) Math.floor(Math.random() * 10);
@@ -28,7 +27,7 @@ public class Tally {
         Collections.sort(setList);
     }
 
-    public void Count(ArrayList<Integer> list, ArrayList<Integer> list2, ArrayList<List<Integer>> listOfLists) {
+    public static void Count(ArrayList<Integer> list, ArrayList<Integer> list2, ArrayList<List<Integer>> listOfLists) {
         ArrayList<Integer> singles = new ArrayList<>();
         int temp;
         int count = 0;
@@ -54,14 +53,13 @@ public class Tally {
                 list2.add(count);
                 count = 1;
                 temp = list.get(i);
-                singles.add(temp);
+                singles.add(list.get(i));
             }
         }
 
         listOfLists.add(singles);
         listOfLists.add(list2);
         System.out.println("Not Sorted BUT Counted\n" + list + "\n" + list2);
-        
         System.out.println("Assorted list\n" + listOfLists.get(0) + "\n" + listOfLists.get(1) + "\n");
 
     }
