@@ -9,26 +9,26 @@ import java.util.*;
  *
  * @author Nathan
  */
-public class CountArray
+public class CountArray 
 {
     public static void main(String args[])
-    {
-        ArrayList <List <Integer>> list = new ArrayList <List <Integer>>();
-
+    {        
+        ArrayList <List <Integer>> sortedList = new ArrayList <List <Integer>>();
+        
+        
         ArrayList <Integer> row3 = new ArrayList <Integer>();
         ArrayList <Integer> countedRow3 = new ArrayList <Integer>();
-
+        
         ArrayList <Integer> row4 = new ArrayList <Integer>();
         ArrayList <Integer> countedRow4 = new ArrayList <Integer>();
-
-        Tally counter = new Tally();
-
-        counter.AddRandom(row3, 10);
-        counter.AddRandom(row4, 10);
-
-        counter.Count(row3, countedRow3, list);
-        counter.Count(row4, countedRow4, list);
-
+        
+        Tally.AddRandom(row3, 10);
+        Tally.AddRandom(row4, 20);
+        
+        Tally.Count(row3, countedRow3, sortedList);
+        sortedList.clear();
+        Tally.Count(row4, countedRow4, sortedList);
+        
     }
 }
 
